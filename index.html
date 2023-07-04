@@ -1,0 +1,84 @@
+
+<html lang="en">
+<head>
+    <title>Simple Speed Typer</title>
+ 
+    <!-- link the CSS file here -->
+    <link rel="stylesheet" href="type.css">
+</head>
+<body>
+  <section id="yyy">
+  <div class="container">
+    <div class="heading">
+      Simple Speed Typing
+    </div>
+    <div class="header">
+      <div class="wpm">
+        <div class="header_text">WPM</div>
+        <div class="curr_wpm">100</div>
+      </div>
+      <div class="cpm">
+        <div class="header_text">CPM</div>
+        <div class="curr_cpm">100</div>
+      </div>
+      <div class="errors">
+        <div class="header_text">Errors</div>
+        <div class="curr_errors">0</div>
+      </div>
+      <div class="timer">
+        <div class="header_text">Time</div>
+        <div class="curr_time">60s</div>
+      </div>
+      <div class="accuracy">
+        <div class="header_text">% Accuracy</div>
+        <div class="curr_accuracy">100</div>
+      </div>
+    </div>
+ 
+    <div class="quote">
+      Click on the area below to start the game.
+    </div>
+    <textarea class="input_area"
+      placeholder="start typing here..."
+      oninput="processCurrentText()"
+      onfocus="startGame()">
+    </textarea>
+    <button class="restart_btn"
+      onclick="resetValues()">
+      Restart
+    </button>
+  </div>
+</section>
+  <section id="paban">
+    <div>
+    <marquee><h3>Work hard for what you want because it won't come to you without a fight</h3></marquee></div>
+  </section>
+<section id="xxx">
+  <h1><strong>TIME IS MONEY</strong></h1>
+  <div id="clock">
+  <div id="hour"></div>
+   <div id="minute"></div>
+   <div id="second"></div>
+  </div>
+</section>
+ 
+  <!-- link the JavaScript file here -->
+  <script src="type.js">
+  </script>
+  <script>
+    setInterval(() => {
+    d = new Date();
+    htime = d.getHours();
+    mtime = d.getMinutes();
+    stime = d.getSeconds();
+    hrotation = 30*htime + mtime/2;
+    mrotation = 6*mtime;
+    srotation = 6*stime;
+
+    hour.style.transform = `rotate(${hrotation}deg)`;
+    minute.style.transform = `rotate(${mrotation}deg)`;
+    second.style.transform = `rotate(${srotation}deg)`;
+}, 1000);
+  </script>
+</body>
+</html>
